@@ -4,8 +4,12 @@
 	font-family: 'poppins';
 	border: 1px solid black;
 	margin: 0px 100px 10px 100px;
-	background-color: #EEEEEE;
+	/*background-color: #EEEEEE; */
+	/*background-image: url('family.webp');
+	background-repeat: no-repeat;
+	background-size: cover; */
 }
+
 
 .main-container h3{
 	padding-left: 15px;
@@ -74,10 +78,13 @@ li a:hover:not(.active) {
 .form-container{
 	display: flex;
 	justify-content: center;
-	/*align-items: center; 
+	/*align-items: center; d
 	min-height: 100vh;*/
 	font-size: 16px;
 	margin-bottom: 60px;
+	background-image: url('../img/family.webp');
+	background-repeat: no-repeat;
+	background-size: cover; 
 }
 
 .form-container form .ele{
@@ -113,4 +120,9 @@ button{
 
 footer, footer small{
 	text-align: center;
+}
+
+#form{
+	background-color: #EEEEEE;
+	border-radius: 10px;
 }

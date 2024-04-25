@@ -1,6 +1,8 @@
 <?php require_once('inc/connection.php')?>
 <?php require_once('inc/header1.php')?>
 
+<link rel="stylesheet" type="text/css" href="css/sign-up.css">
+
 <body>
 	<div class="main-container">
 		<?php require_once('inc/header1-1.php') ?>

@@ -1,3 +1,14 @@
 .form-container h3{
 	text-align: center;
 }
+
+.form-container{
+	background-image: url('../img/family.webp');
+	background-repeat: no-repeat;
+	background-size: cover; 
+}
+
+#form{
+	background-color: #EEEEEE;
+	border-radius: 10px;
+}
