@@ -11,7 +11,8 @@
 	if(mysqli_connect_errno()){
 		die('Database connection failed '. mysqli_connect_error());
 	} else {
-		echo "Connection successful.";
+		//delete this after completing the website
+		echo "Connection successful."; 
 	}
 
 ?>

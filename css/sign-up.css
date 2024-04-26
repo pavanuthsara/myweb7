@@ -12,3 +12,7 @@
 	background-color: #EEEEEE;
 	border-radius: 10px;
 }
+
+p#message{
+	background-color: red;
+}

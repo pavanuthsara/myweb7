@@ -1,4 +1,19 @@
-<?php require_once('inc/connection.php')?>
+<?php 
+	if($_SERVER['REQUEST_METHOD']=='POST'){
+		require_once('inc/connection.php');
+
+		$firstName = $_POST['firstName'];
+		$lastName = $_POST['lastName'];
+		$gender = $_POST['gender'];
+		$mobileNumber = $_POST['mobileNumber'];
+		$email = $_POST['email'];
+		$address = $_POST['address'];
+		$dob = $_POST['dob'];
+		$plan = $_POST['plans'];
+		$password = $_POST['password'];
+	}
+?>
+
 <?php require_once('inc/header1.php')?>
 
 <link rel="stylesheet" type="text/css" href="css/sign-up.css">
@@ -9,7 +24,7 @@
 		<h3>Register Form</h3>
 		<div class="form-container">
 			
-			<form id="form" action="/" method="post">
+			<form id="form" action="sign-up.php" method="post">
 				<div class="ele">
 				<label>First Name</label> <br>
 				<input type="text" name="firstName" required class="a"> <br>
@@ -51,9 +66,23 @@
 		        <input type="date" name="dob"> <br>
 		        </div>
 
+		        <!--select plan-->
+		         <div class="ele">
+		        <label>Choose a plan</label> 
+		        <small><a href="plans.php" target="_blank">[Details about plans]</a></small><br>
+		        <select name="plans" id="plans" required>
+		        	<option value="p1">Emergency Coverage</option>
+		        	<option value="p2">Complete Coverage</option>
+		        	<option value="p3">Family All In One</option>
+		        	<option value="p4">Elder Citizens</option>
+		        </select>
+		        </div>
+		        <!--end select plan-->
+
 		        <div class="ele">
 		        <label>Password</label> <br>
-		        <input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required class="b" id="pwd1"> <br>
+		        <input type="password" name="password" required class="b" id="pwd1"> <br>
+				<!--pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"-->
 		        </div>
         
 		        <div class="ele">
@@ -62,14 +91,20 @@
 		        </div>
 
 		        <div class="ele">
+		        	<p id="message"></p>
+		        </div>
+
+		        <div class="ele">
 		        <input type="checkbox" name="">
 		        <label>Accept Terms and Conditions</label> <br>
 		        </div>
 
-		        <button>Submit</button>
-
+		        <input type="button" name="" value="Submit" onclick="signUpFormValidation()">
 
 	        </form>
+
+	        <script type="text/javascript" src="javascript/sign-up.js"></script>
+
         </div>
 
         <?php require_once('inc/footer.php') ?>
