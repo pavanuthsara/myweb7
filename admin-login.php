@@ -12,11 +12,11 @@
 		<?php require_once('inc/header1-1.php') ?>
 		
 		<div class="form-container">
-            <form id="form" action="admin-login-process.php" method="post">
+            <form id="form" action="process/admin-login-process.php" method="post">
                 <h3><u>Admin - Log in</u></h3>
 				
 		        <div class="ele">
-		        <label>User Id</label> 
+		        <label>Admin Id</label> 
 		        <input type="text" name="adminId"  required class="b"> <br>
 		        </div>
 
@@ -25,7 +25,7 @@
 		        <input type="password" name="password" required class="b" id="pwd1"> <br>
 		        </div>
 
-		        <button class="button-green center" type="submit" name="submit">Log In</button> <br>
+		        <button class="button-green center" type="submit" name="submit">Log In</button> <br><br>
 
 		        <div class="text-center">
 		        <label class="login-as-user"><a href="sign-in.php">Log in as User</a></label>

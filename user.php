@@ -1,6 +1,13 @@
 <?php session_start(); ?>
 <?php require_once('inc/connection.php'); ?>
 
+<?php 
+	//check if a user is logged in
+	if(!isset($_SESSION['user_id'])){
+		header("Location: sign-in.php");
+	} 
+?> 
+
 
 <!DOCTYPE html>
 <html>
@@ -25,7 +32,7 @@
 			<li class="nav1"><a href="plans.php">Plans</a></li>
 			<li class="nav1"><a href="contact-us.php">Contact Us</a></li>
 			<li class="nav1"><a href="">FAQ</a></li>
-			<li class="nav2"><a href="home.php">Log out</a></li> <!-- redirect to home page after log out -->
+			<li class="nav2"><a href="logout.php">Log out</a></li> <!-- redirect to home page after log out -->
 
 		</ul>
 
@@ -38,8 +45,8 @@
 			</div>
 
 			<div class="user-details-content">
-				<p>User ID : </p>
-				<p>Username : </p> 
+				<p>User ID : <?php echo $_SESSION['user_id'];?></p>
+				<p>Username : <?php echo $_SESSION['first_name'];?></p> 
 				<p>Plan : </p>
 				<button class="button-green">Edit your details</button>
 			</div>

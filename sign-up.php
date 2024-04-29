@@ -21,10 +21,10 @@
 <body>
 	<div class="main-container">
 		<?php require_once('inc/header1-1.php') ?>
-		<h3>Register Form</h3>
 		<div class="form-container">
 			
 			<form id="form" action="sign-up.php" method="post">
+				<h3>Register Form - New user</h3>
 				<div class="ele">
 				<label>First Name</label> <br>
 				<input type="text" name="firstName" required class="a"> <br>

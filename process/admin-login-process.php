@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'inc/connection.php';
+require_once '../inc/connection.php';
 
 // Retrieve username and password from POST request
 $username = $_POST['adminId'];
@@ -20,11 +20,12 @@ if ($result->num_rows > 0) {
     $_SESSION['admin_last_name'] = $user['lastName'];
 
     // Redirect to welcome page on success
-    header("Location: admin.php");
+    header("Location: ../admin.php");
 } else {
     // Redirect back to login page with error message
-    header("Location: admin-login.php?message=Invalid username or password");
+    header("Location: ../admin-login.php?message=Invalid admin id or password");
 }
 
-$conn->close();
+//close the connection
+$connection->close();
 ?>

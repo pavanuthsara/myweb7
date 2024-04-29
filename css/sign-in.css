@@ -10,11 +10,6 @@
 	background-size: cover; */
 }
 
-
-.main-container h3{
-	padding-left: 15px;
-}
-
 .head h1{
 	text-align: center;
 	margin-bottom: 0px;
@@ -67,6 +62,8 @@ li a:hover:not(.active) {
 	text-align: center;
 }
 
+
+
 .form-container form .ele input.a{
 	width: 500px;
 }
@@ -78,8 +75,8 @@ li a:hover:not(.active) {
 .form-container{
 	display: flex;
 	justify-content: center;
-	/*align-items: center; d
-	min-height: 100vh;*/
+	align-items: center; 
+	min-height: 100vh;
 	font-size: 16px;
 	margin-bottom: 60px;
 	background-image: url('../img/family.webp');

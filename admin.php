@@ -33,7 +33,7 @@
 			<li class="nav1"><a href="plans.php">Plans</a></li>
 			<li class="nav1"><a href="contact-us.php">Contact Us</a></li>
 			<li class="nav1"><a href="">FAQ</a></li>
-			<li class="nav2"><a href="home.php">Log out</a></li> <!-- redirect to home page after log out -->
+			<li class="nav2"><a href="logout.php">Log out</a></li> <!-- redirect to home page after log out -->
 
 		</ul>
 
