@@ -39,3 +39,6 @@ CREATE TABLE admin(
 
 INSERT INTO admin 
 VALUES ('a1', 'Kasun', 'Herath', 'kasun1');
+
+INSERT INTO admin 
+VALUES ('a2', 'Saduni', 'Perera', 'saduni2');
