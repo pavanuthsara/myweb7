@@ -17,6 +17,7 @@ if ($result->num_rows > 0) {
     // Store user information in session
     $_SESSION['user_id'] = $user['adminId'];
     $_SESSION['first_name'] = $user['firstName'];
+    $_SESSION['last_name'] = $user['lastName'];
 
     // Redirect to welcome page on success
     header("Location: admin.php");

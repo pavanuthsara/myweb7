@@ -5,7 +5,7 @@
 
 <?php 
     //checking if a user is logged in
-    /*if(!isset($_SESSION['username'])){
+    /*if(!isset($_SESSION['user_id'])){
         header('Location: admin-login.php');
     } */
 ?>
@@ -41,8 +41,8 @@
 		<div class="admin-details details">
             <h4 class="title">Admin details</h4>
 			<div class="user-details-content">
-				<p>Admin ID : <?php echo $username ;?></p>
-				<p>Name : </p> 
+				<p>Admin ID : <?php echo $_SESSION['user_id'];?></p>
+				<p>Name : <?php echo $_SESSION['first_name']." ".$_SESSION['last_name'];?></p> 
 				<button class="button-green">Edit your details</button>
 			</div>
 			
