@@ -1,3 +1,15 @@
+<?php session_start(); ?>
+
+<!--add database connection-->
+<?php require_once 'inc/connection.php'; ?>
+
+<?php 
+    //checking if a user is logged in
+    if(!isset($_SESSION['adminId'])){
+        header('Location: admin-login.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,7 +60,7 @@
 
             <div class="add-employee">
                 <div><b>Add new employee</b></div>
-                <form action="" method="">
+                <form action="process/add-employee-process.php" method="post">
                     <div>
                     <label for="employeeId">Employee ID : </label>
                     <input type="text" name="employeeId">
@@ -65,6 +77,11 @@
                     </div>
 
                     <div>
+                    <label for="contact">Contact : </label>
+                    <input type="text" for="contact">
+                    </div>
+
+                    <div>
                     <label for="job-title">Job title : </label>
                     <select name="job-title" id="job-title">
                         <option value="insurance-coordinator">Insurance Coordinator</option>
@@ -78,7 +95,7 @@
                     </div>
 
                 </form>
-                <button class="button-green">Add employee</button>
+                <button type="submit">Add employee</button>
                 <hr>
             </div>
 
@@ -99,6 +116,11 @@
                     <div>
                     <label for="dob">Date of birth : </label>
                     <input type="date" for="dob">
+                    </div>
+
+                    <div>
+                    <label for="contact">Contact : </label>
+                    <input type="text" for="contact">
                     </div>
 
                     <div>
@@ -125,6 +147,7 @@
                 <label for="employeeId">Employee ID : </label>
                 <input type="text" name="employeeId">
                 </div>
+                <button class="button-green">Delete details</button>
                 <hr>
             </div>
 			
@@ -154,3 +177,4 @@
 
 </body>
 </html>
+

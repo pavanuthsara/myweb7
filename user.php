@@ -1,3 +1,7 @@
+<?php session_start(); ?>
+<?php require_once('inc/connection.php'); ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>

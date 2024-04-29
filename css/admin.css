@@ -85,7 +85,7 @@ li a:hover:not(.active) {
 	padding: 5px 10px;
 	text-align: center;
 	text-decoration: none;
-	curson:pointer;
+	/*cursor:pointer;*/
 	border-radius: 2px;
 }
 

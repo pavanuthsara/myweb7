@@ -1,0 +1,41 @@
+create table employee (
+	employeeId VARCHAR(10) not null,
+    employeeName varchar(30) not null,
+    dob date not null,
+    contact varchar(10) not null,
+    jobTitle varchar(30) not null,
+    
+    constraint employee_pk primary key(employeeId)
+);
+
+CREATE TABLE user(
+    userId VARCHAR(10) NOT NULL,
+    firstName VARCHAR() NOT NULL,
+    lastName VARCHAR() NOT NULL,
+
+    CONSTRAINT user_pk PRIMARY KEY(userId)
+);
+
+ALTER TABLE user 
+ALTER COLUMN gender VARCHAR(10) NOT NULL,
+ALTER COLUMN mobileNumber VARCHAR(10) NOT NULL,
+ALTER COLUMN email VARCHAR(10) NOT NULL,
+ALTER COLUMN address VARCHAR(150) NOT NULL,
+ALTER COLUMN dob DATE NOT NULL,
+ALTER COLUMN planId VARCHAR(10) NOT NULL,
+ALTER COLUMN password VARCHAR(30) NOT NULL;
+
+INSERT INTO user 
+VALUES ('u1', 'Pavan', 'Uthsara', 'male', '0714169538', 'pavan@shieldplus.com', 'No.2, Welthera mawatha, Kothalawala', '2003-08-29', 'p1', 'uthsara');
+
+CREATE TABLE admin(
+    adminId varchar(6) NOT NULL,
+    firstName varchar(20) NOT NULL,
+    lastName varchar(20) NOT NULL,
+    password varchar(30) NOT NULL,
+
+    CONSTRAINT admin_pK PRIMARY KEY(adminId)
+);
+
+INSERT INTO admin 
+VALUES ('a1', 'Kasun', 'Herath', 'kasun1');

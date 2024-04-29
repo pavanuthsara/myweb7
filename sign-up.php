@@ -51,7 +51,7 @@
 
 		        <div class="ele">
 		        <label>Email Address</label> <br>
-		        <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required class="a"> <br>
+		        <input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required class="a"> <br>
 		        </div>
 
 		        <div class="ele">
@@ -70,7 +70,7 @@
 		         <div class="ele">
 		        <label>Choose a plan</label> 
 		        <small><a href="plans.php" target="_blank">[Details about plans]</a></small><br>
-		        <select name="plans" id="plans" required>
+		        <select name="plan" id="plans" required>
 		        	<option value="p1">Emergency Coverage</option>
 		        	<option value="p2">Complete Coverage</option>
 		        	<option value="p3">Family All In One</option>
