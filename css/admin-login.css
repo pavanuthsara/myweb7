@@ -4,15 +4,7 @@
 	font-family: 'poppins';
 	border: 1px solid black;
 	margin: 0px 100px 10px 100px;
-	/*background-color: #EEEEEE; */
-	/*background-image: url('family.webp');
-	background-repeat: no-repeat;
-	background-size: cover; */
-}
-
-
-.main-container h3{
-	padding-left: 15px;
+	background-color: #EEEEEE;
 }
 
 .head h1{
@@ -55,36 +47,38 @@ li a{
 	text-decoration: none;
 }
 
-li a:hover:not(.active) {
+li a:hover {
   background-color: #111;
 }
 
-.active {
-  background-color: #04AA6D;
-}
 
 .h3{
 	text-align: center;
 }
 
 .form-container form .ele input.a{
-	width: 500px;
+	width: 300px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .form-container form .ele input.b{
 	width: 300px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .form-container{
 	display: flex;
 	justify-content: center;
-	/*align-items: center; d
-	min-height: 100vh;*/
+	align-items: center;
+	min-height: 100vh;
 	font-size: 16px;
-	margin-bottom: 60px;
-	background-image: url('../img/family.webp');
-	background-repeat: no-repeat;
-	background-size: cover; 
+    background-image: url('../img/family.webp');
+    background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .form-container form .ele{
@@ -97,33 +91,65 @@ li a:hover:not(.active) {
 	
 }
 
-button{
-	background-color: #9ADE7B;
-	border: none;
-	padding: 5px 10px;
-	text-align: center;
-	text-decoration: none;
-	cursor:pointer;
-	border-radius: 2px;
-	width: 100%;
-}
-
-.center{
-	display: flex;
-	justify-content: center;
-}
-
-.text-center{
-	text-align: center;
-	font-size: 14px;
-	padding: 5px;
+#form{
+    border-radius: 20px;
+    background-color: #EEEEEE;
 }
 
 footer, footer small{
 	text-align: center;
 }
 
-#form{
-	background-color: #EEEEEE;
-	border-radius: 10px;
+label {
+    display: block;
+    margin-bottom: 5px;
 }
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #9ADE7B;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7BB162;
+}
+
+label.login-as-user{
+    text-align: center;
+} 
+
+p.error-message{
+    background-color: red;
+    color: white;
+    
+}
+
+/* below */
+/*
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+

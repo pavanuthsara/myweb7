@@ -67,10 +67,10 @@
 <body>
 	<div class="main-container">
 		<?php require_once('inc/header1-1.php') ?>
-		<h3><u>Log in form</u></h3>
 		<div class="form-container">
 			
 			<form id="form" action="sign-in.php" method="post">
+				<h3><u>Log in form</u></h3>
 
 				<?php 
 					if(isset($errors) && !empty($errors)){

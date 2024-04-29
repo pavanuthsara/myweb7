@@ -1,76 +1,55 @@
-<?php session_start(); ?>
-<?php require_once 'inc/connection.php'; ?>
-<?php 
-    //check if form submitted
-    if(isset($_POST['submit'])){
-
-        $errors = array();
-
-        //check if form filled correctly
-        if(isset($_POST['adminId']) && isset($_POST['password'])){
-            $ID = mysqli_real_escape_string($connection, $_POST["adminId"]);
-            $password = mysqli_real_escape_string($connection, $_POST["password"]);
-    
-            $sql = "SELECT * FROM admin
-                        WHERE adminId = '{$ID}'
-                        AND password = '{$password}'
-                        LIMIT 1;";
-    
-            //$result = $connection->query($sql);
-            $result = mysqli_query($connection, $sql);
-
-            //check if there are any results
-            if($result){
-                //admin validation
-                $admin = mysqli_fetch_assoc($result);
-                $_SESSION['admin_id'] = $admin['adminId'];
-                $_SESSION['admin_name'] = $admin['firstName'];
-
-                //header('Location: admin.php');
-            }else{
-                $errors[] = 'Invalid admin log in';
-            }
-        } else{
-            $errors[] = "Fill all the fields.";
-        }
-
-
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Log In </title>
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="css/admin-login.css">
 </head>
 <body>
 
-    <form action="admin-login.php" method="post">
+    <div class="main-container">
+		<?php require_once('inc/header1-1.php') ?>
+		
+		<div class="form-container">
+            <form id="form" action="admin-login-process.php" method="post">
+                <h3><u>Admin - Log in</u></h3>
+				
+		        <div class="ele">
+		        <label>User Id</label> 
+		        <input type="text" name="adminId"  required class="b"> <br>
+		        </div>
 
-        <p>
-            <label for="">Admin Id </label>
-            <input type="text" name="adminId">
-        </p>
+		        <div class="ele">
+		        <label>Password</label> 
+		        <input type="password" name="password" required class="b" id="pwd1"> <br>
+		        </div>
 
-        <p>
-            <label for="">Password</label>
-            <input type="password" name="password">
-        </p>
+		        <button class="button-green center" type="submit" name="submit">Log In</button> <br>
 
-        <p>
-            <button type="submit" name="submit">Log in</button>
-        </p>
+		        <div class="text-center">
+		        <label class="login-as-user"><a href="sign-in.php">Log in as User</a></label>
+		        </div>
 
-        <?php  
-            if(isset($errors) && !empty($errors)){
-                echo '<p class="error">Invalid Username / Password</p>';
-            }
-        ?>
+                <p class="error-message">
+                    <?php
+                    //if there is any error
+                    if (isset($_GET['message'])) {
+                        echo $_GET['message'];
+                    }
+                    ?>
+                </p>
+	        </form>
 
-    </form>
-    
+        </div>
+
+        <footer>
+	        <hr>
+	        &copy; 2024 Copyright Reserved - Shield Plus Insurance <br>
+	        <small>email@shieldplus.com</small>
+        </footer>
+
+        <?php //require_once('inc/footer.php') ?>
+	</div>
 </body>
 </html>
-
-<?php mysqli_close($connection); ?>
