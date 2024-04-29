@@ -5,9 +5,9 @@
 
 <?php 
     //checking if a user is logged in
-    /*if(!isset($_SESSION['user_id'])){
+    if(!isset($_SESSION['user_id'])){
         header('Location: admin-login.php');
-    } */
+    } 
 ?>
 
 <!DOCTYPE html>
