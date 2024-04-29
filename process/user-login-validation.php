@@ -13,6 +13,10 @@ $sql = "SELECT * FROM user WHERE userId='$userId' AND password='$password'";
 
 $result = $connection->query($sql);
 
+$sql_plan = "SELECT p.planName
+            FROM user u, plan p
+            WHERE u.planId = p.planId";
+
 if($result->num_rows > 0){
     //fetch the user details to associative array
     $user = $result->fetch_assoc();
