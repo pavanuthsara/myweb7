@@ -13,15 +13,21 @@ $sql = "SELECT * FROM user WHERE userId='$userId' AND password='$password'";
 
 $result = $connection->query($sql);
 
-$sql_plan = "SELECT p.planName
-            FROM user u, plan p
-            WHERE u.planId = p.planId";
 
 if($result->num_rows > 0){
     //fetch the user details to associative array
     $user = $result->fetch_assoc();
     $_SESSION['user_id'] = $user['userId'];
     $_SESSION['first_name'] = $user['firstName'];
+
+    //$_SESSION['plan_id'] = $user['planId'];
+    $plan_id = $user['planId'];
+
+    //CHECK THE FOLLOWING SQL QUERY
+    $sql_plan = "SELECT * FROM plan where planId='$plan_id'";
+    $result_plan = $connection->query($sql_plan);
+    $plan = $result_plan->fetch_assoc();
+    $_SESSION['plan_name'] = $plan['planName'];
 
     //redirect to the user.php page
     header("Location: ../user.php");

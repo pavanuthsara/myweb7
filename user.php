@@ -47,7 +47,7 @@
 			<div class="user-details-content">
 				<p>User ID : <?php echo $_SESSION['user_id'];?></p>
 				<p>Username : <?php echo $_SESSION['first_name'];?></p> 
-				<p>Plan : </p>
+				<p>Plan : <?php echo $_SESSION['plan_name']; ?></p>
 				<button class="button-green">Edit your details</button>
 			</div>
 			
