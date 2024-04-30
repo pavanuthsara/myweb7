@@ -49,21 +49,99 @@
 		</div>
 		
 		<div class="manage-employee details">
-			<h4 class="title">Manage employees</h4>
+            <h4 class="title">Manage employees</h4>
 			<hr>
+            
+            <!-- Add employee -->
+            <div class="add-employee">
+                <div><b>Add new employee</b></div>
+                <form action="process/add-employee-process.php" method="post">
+                    <div>
+                    <label for="employeeId">Employee ID : </label>
+                    <input type="text" name="employeeId">
+                    </div>
+    
+                    <div>
+                    <label for="employeeName">Employee Name : </label>
+                    <input type="text" name="employeeName">
+                    </div>
+    
+                    <div>
+                    <label for="dob">Date of birth : </label>
+                    <input type="date" name="dob">
+                    </div>
+    
+                    <div>
+                    <label for="contact">Contact : </label>
+                    <input type="text" name="contact">
+                    </div>
+    
+                    <div>
+                    <label for="job-title">Job title : </label>
+                    <select name="job-title" id="job-title">
+                        <option value="Insurance Coordinator">Insurance Coordinator</option>
+                        <option value="Human Resources Manager">Human Resources Manager</option>
+                        <option value="Claim Processor">Claim Processor</option>
+                        <option value="Finance Manager">Finance Manager</option>
+                        <option value="Healthcare Navigator">Healthcare Navigator</option>
+                        <option value="Data Analyst">Data Analyst</option>
+                        <option value="IT Specialist">IT specialist</option>
+                    </select>
+                    </div>
+    
+                    <button type="submit" name="submit">Add employee</button>
+                </form>
+    
+                <p>
+                    <?php
+                    if(isset($_GET['add-employee-message'])){
+                        echo $_GET['add-employee-message'];
+                    }
+                    ?>
+                </p>
+                <hr>
+            </div>
+            <!-- End add employee -->
 
-            <div class="view-employee">
-            <div><b>Employees</b></div>
-                <?php
+            <div class="view-employee"> 
+            <div><b>Employees</b></div> <br>
+                <?php 
                 require_once 'inc/connection.php';
                 $sql = "SELECT * FROM employee";
                 $result = $connection->query($sql);
                 
                 if(!$result){
                     die("Invalid query or no results found!");
-                }else{
+                }else{ 
+                    echo "<style>
+                    table, th,td{
+                        padding: 5px 15px;
+                        border: 1px solid black;
+                        border-collapse: collapse;
+                    }
+                    
+                    .edit-button{
+                        text-decoration: none;
+                        display: inline-block;
+                        background-color: #0ed58f;
+                        color:black;
+                        padding: 10px;
+                        cursor: pointer;
+                        border-radius: 5px;
+                    }
+                    
+                    .delete-button{
+                        text-decoration: none;
+                        display: inline-block;
+                        background-color: #ca0939;
+                        color:white;
+                        padding: 10px;
+                        cursor: pointer;
+                        border-radius: 5px;
+                    }
+                    </style>";
                     echo "<table>";
-                    echo "<tr><td>User Id</td> <td>First Name</td> <td>Last Name</td> <td>Plan Id</td></tr>";
+                    echo "<tr><td>Employee Id</td> <td>Name</td> <td>Date Of Birth</td> <td>Contact</td> <td>Job Title</td></tr>";
                     while($row=$result->fetch_assoc()){
                         echo "<tr>";
                         echo "<td>".$row['employeeId']."</td>";
@@ -75,61 +153,13 @@
                         echo "<td><a href='' class='delete-button'>Delete</a></td>";
                         echo "</tr>";
                     }
-                    echo "</table>";
-                }
-                echo "hellow world";
+                    echo "</table>"; 
+                } 
                 ?>
                 <hr>
             </div>
+             
 
-            <div class="add-employee">
-                <div><b>Add new employee</b></div>
-                <form action="process/add-employee-process.php" method="post">
-                    <div>
-                    <label for="employeeId">Employee ID : </label>
-                    <input type="text" name="employeeId">
-                    </div>
-
-                    <div>
-                    <label for="employeeName">Employee Name : </label>
-                    <input type="text" name="employeeName">
-                    </div>
-
-                    <div>
-                    <label for="dob">Date of birth : </label>
-                    <input type="date" name="dob">
-                    </div>
-
-                    <div>
-                    <label for="contact">Contact : </label>
-                    <input type="text" name="contact">
-                    </div>
-
-                    <div>
-                    <label for="job-title">Job title : </label>
-                    <select name="job-title" id="job-title">
-                        <option value="insurance-coordinator">Insurance Coordinator</option>
-                        <option value="human-resources-manager">Human Resources Manager</option>
-                        <option value="claim-processor">Claim Processor</option>
-                        <option value="finance-manager">Finance Manager</option>
-                        <option value="healthcare-navigator">Healthcare Navigator</option>
-                        <option value="data-analyst">Data Analyst</option>
-                        <option value="it-specialist">IT specialist</option>
-                    </select>
-                    </div>
-
-                </form>
-                <button type="submit" name="submit">Add employee</button>
-
-                <p>
-                    <?php
-                    if(isset($_GET['add-employee-message'])){
-                        echo $_GET['add-employee-message'];
-                    }
-                    ?>
-                </p>
-                <hr>
-            </div>
 
             <div class="update-employee">
                 <div><b>Update employee details</b></div>
