@@ -79,3 +79,10 @@ ALTER TABLE user
 ADD CONSTRAINT user_fk
     FOREIGN KEY(planId) REFERENCES plan(planId);
 
+/* insert data in to employee table */
+INSERT INTO employee VALUE ('e1', 'Saduni Geethma', '1997-05-12', '0758986524', 'Insurance Coordinator');
+INSERT INTO employee VALUE ('e2', 'Malinda Sirinanda', '1988-10-25', '0774567890', 'Human Resources Manager');
+INSERT INTO employee VALUE ('e3', 'Kumaraji Ihalagamage', '1990-03-18', '0712345678', 'IT specialist');
+INSERT INTO employee VALUE ('e4', 'Suruduni Marisge', '1985-07-08', '0765432109', 'Data Analyst');
+INSERT INTO employee VALUE ('e5', 'Anuwari Pieris', '1993-12-30', '0789012345', 'Finance Manager');
+INSERT INTO employee VALUE ('e6', 'Perani Devadunug', '1982-09-15', '0723456789', 'Claim Processor');

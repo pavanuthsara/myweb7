@@ -1,0 +1,25 @@
+table, th,td{
+    padding: 10px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.edit-button{
+    text-decoration: none;
+    display: inline-block;
+    background-color: #0ed58f;
+    color:black;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.delete-button{
+    text-decoration: none;
+    display: inline-block;
+    background-color: #ca0939;
+    color:white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}

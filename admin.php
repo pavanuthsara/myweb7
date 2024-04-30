@@ -54,7 +54,31 @@
 
             <div class="view-employee">
             <div><b>Employees</b></div>
-                read employees from database
+                <?php
+                require_once 'inc/connection.php';
+                $sql = "SELECT * FROM employee";
+                $result = $connection->query($sql);
+                
+                if(!$result){
+                    die("Invalid query or no results found!");
+                }else{
+                    echo "<table>";
+                    echo "<tr><td>User Id</td> <td>First Name</td> <td>Last Name</td> <td>Plan Id</td></tr>";
+                    while($row=$result->fetch_assoc()){
+                        echo "<tr>";
+                        echo "<td>".$row['employeeId']."</td>";
+                        echo "<td>".$row['employeeName']."</td>";
+                        echo "<td>".$row['dob']."</td>";
+                        echo "<td>".$row['contact']."</td>";
+                        echo "<td>".$row['jobTitle']."</td>";
+                        echo "<td><a href='' class='edit-button'>Edit</a></td>";
+                        echo "<td><a href='' class='delete-button'>Delete</a></td>";
+                        echo "</tr>";
+                    }
+                    echo "</table>";
+                }
+                echo "hellow world";
+                ?>
                 <hr>
             </div>
 
@@ -73,12 +97,12 @@
 
                     <div>
                     <label for="dob">Date of birth : </label>
-                    <input type="date" for="dob">
+                    <input type="date" name="dob">
                     </div>
 
                     <div>
                     <label for="contact">Contact : </label>
-                    <input type="text" for="contact">
+                    <input type="text" name="contact">
                     </div>
 
                     <div>
@@ -95,7 +119,15 @@
                     </div>
 
                 </form>
-                <button type="submit">Add employee</button>
+                <button type="submit" name="submit">Add employee</button>
+
+                <p>
+                    <?php
+                    if(isset($_GET['add-employee-message'])){
+                        echo $_GET['add-employee-message'];
+                    }
+                    ?>
+                </p>
                 <hr>
             </div>
 
