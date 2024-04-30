@@ -1,0 +1,29 @@
+body{
+    background: url('images/Health-insurance.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.description{
+
+    width: calc(70%-50px);
+    box-sizing: border-box;
+    margin-bottom: 40px; 
+    margin-right: 200px;
+    margin-left: 200px;
+    padding: 10px; 
+    background-color: #b3f3ec; 
+    font-size: 35px;
+
+}
+
+.plan{
+    width: calc(70%-50px);
+    box-sizing: border-box;
+    margin-bottom: 40px; 
+    margin-right: 200px;
+    margin-left: 200px;
+    padding: 10px; 
+    background-color: #c5cbcb; 
+    font-size: 20px;
+}
