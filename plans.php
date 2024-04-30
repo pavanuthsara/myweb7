@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insurance Plans</title>
-    <link rel = "stylesheet" href = "plans.css">
+    <link rel = "stylesheet" href = "css/plans.css">
 </head>
 <body>
-<h1 id="heading">Our Plans</h1>
+    <?php require_once('inc/header1.php')?>
+    <div class="main-container">
+
+        <?php require_once('inc/header1-1.php') ?>
 
 <div class="description"><h2>Plenty of plans to select from,<br> so that you can secure your and your loved ones' FUTURE</h2></div>
 
@@ -38,16 +41,15 @@
     <p><b>A specialized</b> health insurance policy tailored to meet the unique healthcare needs of children and adolescents. This plan is designed to provide comprehensive coverage for various medical services and treatments essential for children's growth, development, and overall well-being.</p>
     </div>
 
+    </div>
+
+    <?php require_once('inc/footer.php') ?>
 </div>
 
-
-<footer>
-        <p>&copy; 2024 My Website. All rights reserved.</p>
-    </footer>
 
 
 
     
-<script src="plans.js"></script>
+<script src="javascript/plans.js"></script>
 </body>
 </html>

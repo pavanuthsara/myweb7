@@ -74,7 +74,7 @@
 }
 
 body{
-    background: url('images/Health-insurance.jpeg');
+    background: url('../images/Health-insurance.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -86,7 +86,7 @@ body{
 }
 
 .description{
-    background: url(images/R\ \(1\).jpeg);
+    background: url('../images/r1.jpeg');
     color: rgb(3, 91, 173);
     background-repeat: no-repeat;
     background-size: cover;
