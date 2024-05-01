@@ -3,6 +3,8 @@ session_start();
 require_once '../inc/connection.php';
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    
     $employeeId = $_POST['employeeId'];
     $employeeName = $_POST['employeeName'];
     $dob = $_POST['dob'];

@@ -41,9 +41,9 @@
 		<div class="admin-details details">
             <h4 class="title">Admin details</h4>
 			<div class="user-details-content">
-				<p>Admin ID : <?php echo $_SESSION['admin_id'];?></p>
-				<p>Name : <?php echo $_SESSION['admin_first_name']." ".$_SESSION['admin_last_name'];?></p> 
-				<button class="button-green">Edit your details</button>
+				<p>Admin ID : <b> <?php echo $_SESSION['admin_id'];?></b></p>
+				<p>Name : <b> <?php echo $_SESSION['admin_first_name']." ".$_SESSION['admin_last_name'];?></b></p> 
+				<!--<button class="button-green">Edit your details</button>-->
 			</div>
 			
 		</div>
@@ -55,30 +55,31 @@
             <!-- Add employee -->
             <div class="add-employee">
                 <div><b>Add new employee</b></div>
-                <form action="process/add-employee-process.php" method="post">
-                    <div>
+                <form action="process/add-employee-process.php" method="post" id="add-employee-form" onsubmit="return validateForm();">
+                    <div class="form-detail">
                     <label for="employeeId">Employee ID : </label>
-                    <input type="text" name="employeeId">
+                    <input type="text" name="employeeId" id="empid">
+                    <span id="empidErr" class=""></span><br>
                     </div>
     
-                    <div>
+                    <div class="form-detail">
                     <label for="employeeName">Employee Name : </label>
-                    <input type="text" name="employeeName">
+                    <input type="text" name="employeeName" id="empname">
                     </div>
     
-                    <div>
+                    <div class="form-detail">
                     <label for="dob">Date of birth : </label>
-                    <input type="date" name="dob">
+                    <input type="date" name="dob" id="empdob">
                     </div>
     
-                    <div>
+                    <div class="form-detail">
                     <label for="contact">Contact : </label>
-                    <input type="text" name="contact">
+                    <input type="text" name="contact" id="empcon">
                     </div>
     
-                    <div>
+                    <div class="form-detail">
                     <label for="job-title">Job title : </label>
-                    <select name="job-title" id="job-title">
+                    <select name="job-title" id="job-title" id="empjob">
                         <option value="Insurance Coordinator">Insurance Coordinator</option>
                         <option value="Human Resources Manager">Human Resources Manager</option>
                         <option value="Claim Processor">Claim Processor</option>
@@ -89,8 +90,35 @@
                     </select>
                     </div>
     
-                    <button type="submit" name="submit">Add employee</button>
+                    <button type="submit" name="submit" class="add-employee-button" >Add employee</button>
                 </form>
+
+                <script>
+                    function validateForm(){
+                        var empid = document.getElementById("empid").value;
+                        var empname = document.getElementById("empname").value;
+                        var empdob = document.getElementById("empdob").value;
+                        var empcon = document.getElementById("empcon").value;
+                        var empjob = document.getElementById("empjob").value;
+
+                        var empidErr = document.getElementById("empidErr");
+                        var empnameErr = document.getElementById("empnameErr");
+                        var empdobErr = document.getElementById("empdobErr");
+                        var empconErr = document.getElementById("empconErr");
+                        var empjobErr = document.getElementById("empjobErr");
+
+                        var isValid = true;
+
+                        //checking the employee id is empty
+                        if(empid === ""){
+                            empidErr.innerHTML = "Employee ID is required!";
+                            isValid = flase;
+                        } else {
+                            empidErr.innerHTML = "";
+                        }
+                    return isValid;
+                    }
+                </script>
     
                 <p>
                     <?php
