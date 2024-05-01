@@ -121,3 +121,24 @@ input{
 	cursor: pointer;
 	border-radius: 5px;
 }
+
+
+.button-one{
+	display: inline-block;
+	background-color: #a1f1a4;
+	color: black;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.button-one:hover {
+	background-color: #71b075;
+}
+
+.employee-buttons{
+	padding: 10px 0px;
+}

@@ -51,14 +51,12 @@
 		<div class="manage-employee details">
             <h4 class="title">Manage employees</h4>
 			<hr>
-
-            <a href="employee/add-emp.php" target="_blank">Add new employee</a>
-            <a href="employee/update-emp.php" target="_blank">Update employee details</a>
-            <a href="employee/delete-emp.php" target="_blank">Delete employee</a>
-            <a href="employee/read-emp.php" target="_blank">Read employees</a>
-
-            
-			
+            <div class="employee-buttons">
+            <a href="employee/read-emp.php" target="_blank" class="button-one">Read employees</a>
+            <a href="employee/add-emp.php" target="_blank" class="button-one">Add new employee</a>
+            <a href="employee/update-emp.php" target="_blank" class="button-one">Update employee details</a>
+            <a href="employee/delete-emp.php" target="_blank" class="button-one">Delete employee</a>
+            </div>
 		</div>	
 
 		<div class="manage-claim-request details">
@@ -71,14 +69,6 @@
 			<h4 class="title">Manage complaints</h4>
 			<hr>
 		</div>
-		
-		<!--
-        <footer>
-	        <hr>
-	        &copy; 2024 Copyright Reserved - Shield Plus Insurance <br>
-	        <small>email@shieldplus.com</small>
-        </footer> 
-    	-->
 
         <?php require_once('inc/footer.php') ?>
 	</div>
