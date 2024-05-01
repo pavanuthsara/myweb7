@@ -10,6 +10,34 @@
     } 
 ?>
 
+<?php
+
+if(isset($_POST['submit'])){
+
+    $errors = array();
+
+    if(empty($_POST['employeeId'])){
+        $errors[] = 'Employee ID is required';
+    }
+
+    $employeeId = $_POST['employeeId'];
+    $employeeName = $_POST['employeeName'];
+    $dob = $_POST['dob'];
+    $contact = $_POST['contact'];
+    $jobTitle = $_POST['job-title'];
+
+    $add_sql = "INSERT INTO employee VALUES ('$employeeId', '$employeeName', '$dob', '$contact', '$jobTitle')";
+
+    if($connection->query($add_sql)){
+        header("Location: admin.php?add-employee-message=Employee entered successfully!");
+    } else{
+        header("Location: admin.php?add-employee-message=Error");
+    }
+} 
+
+$connection->close();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,29 +82,34 @@
             
             <!-- Add employee -->
             <div class="add-employee">
-                <div><b>Add new employee</b></div>
-                <form action="process/add-employee-process.php" method="post">
-                    <div>
+                <p><b>Add new employee</b></p>
+                <?php  //display error messages
+                    if(errors){
+                        echo "There is a error!";
+                    }
+                ?>
+                <form action="admin.php" method="post" id="add-employee-form">
+                    <div class="form-detail">
                     <label for="employeeId">Employee ID : </label>
                     <input type="text" name="employeeId">
                     </div>
     
-                    <div>
+                    <div class="form-detail">
                     <label for="employeeName">Employee Name : </label>
                     <input type="text" name="employeeName">
                     </div>
     
-                    <div>
+                    <div class="form-detail">
                     <label for="dob">Date of birth : </label>
                     <input type="date" name="dob">
                     </div>
     
-                    <div>
+                    <div class="form-detail">
                     <label for="contact">Contact : </label>
                     <input type="text" name="contact">
                     </div>
     
-                    <div>
+                    <div class="form-detail">
                     <label for="job-title">Job title : </label>
                     <select name="job-title" id="job-title">
                         <option value="Insurance Coordinator">Insurance Coordinator</option>
@@ -89,7 +122,7 @@
                     </select>
                     </div>
     
-                    <button type="submit" name="submit">Add employee</button>
+                    <button type="submit" name="submit" class="add-employee-button">Add employee</button>
                 </form>
     
                 <p>

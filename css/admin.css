@@ -96,3 +96,28 @@ footer, footer small{
 	background-color: antiquewhite;
 	padding: 10px;
 }
+
+#add-employee-form{
+	background-color: antiquewhite;
+	width: 100%;
+}
+
+input{
+	width: 50%;
+	padding: 5px;
+}
+
+.form-detail{
+	margin: 10px;
+
+}
+
+.add-employee-button{
+	text-decoration: none;
+	display: inline-block;
+	background-color: #0ed58f;
+	color:black;
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 5px;
+}
