@@ -7,7 +7,7 @@ session_start();
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Admin - Read employees</title>
-	<link rel="stylesheet" type="text/css" href="add-emp.css">
+	<link rel="stylesheet" type="text/css" href="read-plan.css">
 </head>
 
 <body>
@@ -23,16 +23,19 @@ session_start();
         </ul>
 
         <div class="view-employee"> 
-            <div><b>Currently working employees</b></div> <br>
+            <div><b>Plan Details</b></div> <br>
                 <?php 
                 require_once '../inc/connection.php';
-                $sql = "SELECT * FROM employee ORDER BY employeeId ASC";
+                $sql = "SELECT * FROM plan ORDER BY planId ASC";
                 $result = $connection->query($sql);
                 
                 if(!$result){
                     die("Invalid query or no results found!");
                 }else{ 
                     echo "<style>
+                    .view-employee{
+                        height: 60vh;
+                    }
                     table, th,td{
                         padding: 5px 15px;
                         border: 1px solid black;
@@ -61,14 +64,14 @@ session_start();
                     </style>";
                     echo '<div class="center-table">';
                     echo "<table>";
-                    echo "<tr><td>Employee Id</td> <td>Name</td> <td>Date Of Birth</td> <td>Contact</td> <td>Job Title</td></tr>";
+                    echo "<tr><td>Plan Id</td> <td>Plan Name</td> <td>Plan Fee</td> <td>Plan Description</td> <td>Duration</td></tr>";
                     while($row=$result->fetch_assoc()){
                         echo "<tr>";
-                        echo "<td>".$row['employeeId']."</td>";
-                        echo "<td>".$row['employeeName']."</td>";
-                        echo "<td>".$row['dob']."</td>";
-                        echo "<td>".$row['contact']."</td>";
-                        echo "<td>".$row['jobTitle']."</td>";
+                        echo "<td>".$row['planId']."</td>";
+                        echo "<td>".$row['planName']."</td>";
+                        echo "<td>".$row['planFee']."</td>";
+                        echo "<td>".$row['planDescription']."</td>";
+                        echo "<td>".$row['duration']."</td>";
                         echo "</tr>";
                     }
                     echo "</table>"; 
@@ -76,6 +79,7 @@ session_start();
                 } 
                 $connection->close();
                 ?>
+                
             </div>
 
         <footer>
