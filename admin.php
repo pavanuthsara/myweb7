@@ -59,6 +59,17 @@
             </div>
 		</div>	
 
+        <div class="manage-employee details">
+            <h4 class="title">Manage plans</h4>
+			<hr>
+            <div class="employee-buttons">
+            <a href="plan/read-plan.php" target="_blank" class="button-one">Read plan details</a>
+            <a href="plan/add-plan.php" target="_blank" class="button-one">Add new plan</a>
+            <a href="plan/update-plan.php" target="_blank" class="button-one">Update plan detail</a>
+            <a href="plan/delete-plan.php" target="_blank" class="button-one">Delete plan</a>
+            </div>
+		</div>
+
 		<div class="manage-claim-request details">
 			<h4 class="title">Manage claim requests</h4>
 			<hr>
