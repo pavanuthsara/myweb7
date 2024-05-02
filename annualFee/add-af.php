@@ -12,18 +12,18 @@ if(!isset($_SESSION['user_id'])){
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     
-    $employeeId = $_POST['empId'];
-    $employeeName = $_POST['empName'];
-    $dob = $_POST['dob'];
-    $contact = $_POST['contact'];
-    $jobTitle = $_POST['job-title'];
+    $feeId = $_POST['feeId'];
+    $userId = $_SESSION['user_id'];
+    $amount = $_POST['amount'];
+    $paymentDate = $_POST['paymentDate'];
+    $status = "Pending";
 
-    $add_sql = "INSERT INTO employee VALUES ('$employeeId', '$employeeName', '$dob', '$contact', '$jobTitle')";
+    $add_sql = "INSERT INTO annualFee VALUES ('$feeId', '$userId', '$amount', '$paymentDate', '$status')";
 
     if($connection->query($add_sql)){
-        header("Location: add-emp.php?add-employee-message=Employee entered successfully!");
+        header("Location: add-af.php?add-employee-message=Payment details entered successfully!");
     } else{
-        header("Location: add-emp.php?add-employee-message=Error");
+        header("Location: add-af.php?add-employee-message=Error");
     }
 }
 

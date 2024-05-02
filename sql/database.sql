@@ -86,3 +86,15 @@ INSERT INTO employee VALUE ('e3', 'Kumaraji Ihalagamage', '1990-03-18', '0712345
 INSERT INTO employee VALUE ('e4', 'Suruduni Marisge', '1985-07-08', '0765432109', 'Data Analyst');
 INSERT INTO employee VALUE ('e5', 'Anuwari Pieris', '1993-12-30', '0789012345', 'Finance Manager');
 INSERT INTO employee VALUE ('e6', 'Perani Devadunug', '1982-09-15', '0723456789', 'Claim Processor');
+
+/* Annual Fee Table */
+CREATE Table annualFee(
+    feeId VARCHAR(6) NOT NULL,
+    userId VARCHAR(6) NOT NULL,
+    amount FLOAT NOT NULL,
+    paymentDate DATE NOT NULL,
+    status VARCHAR(20),
+
+    CONSTRAINT annualFee_pk PRIMARY KEY(feeId),
+    CONSTRAINT annualFee_fk FOREIGN KEY (userId) REFERENCES user(userId)
+);

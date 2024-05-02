@@ -1,5 +1,6 @@
 <?php 
 session_start(); 
+$userId = $_SESSION['user_id'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,15 +19,15 @@ session_start();
         </div>
 
         <ul class="nav1">
-            <li class="nav1"><a href="../admin.php">User dashboard</a></li>
+            <li class="nav1"><a href="../user.php">User dashboard</a></li>
             <li class="nav2"><a href="../logout.php">Log Out</a></li>
         </ul>
 
         <div class="view-employee"> 
-            <div><b>Fee Payments</b></div> <br>
+            <div><b>Your Fee Payments</b></div> <br>
                 <?php 
                 require_once '../inc/connection.php';
-                $sql = "SELECT * FROM employee ORDER BY employeeId ASC";
+                $sql = "SELECT * FROM annualFee WHERE userId = '$userId' ORDER BY feeId ASC";
                 $result = $connection->query($sql);
                 
                 if(!$result){
@@ -61,14 +62,13 @@ session_start();
                     </style>";
                     echo '<div class="center-table">';
                     echo "<table>";
-                    echo "<tr><td>Employee Id</td> <td>Name</td> <td>Date Of Birth</td> <td>Contact</td> <td>Job Title</td></tr>";
+                    echo "<tr><td>Fee Id</td> <td>Amount</td> <td>Payment Date</td> <td>Status</td></tr>";
                     while($row=$result->fetch_assoc()){
                         echo "<tr>";
-                        echo "<td>".$row['employeeId']."</td>";
-                        echo "<td>".$row['employeeName']."</td>";
-                        echo "<td>".$row['dob']."</td>";
-                        echo "<td>".$row['contact']."</td>";
-                        echo "<td>".$row['jobTitle']."</td>";
+                        echo "<td>".$row['feeId']."</td>";
+                        echo "<td>".$row['amount']."</td>";
+                        echo "<td>".$row['paymentDate']."</td>";
+                        echo "<td>".$row['status']."</td>";
                         echo "</tr>";
                     }
                     echo "</table>"; 
