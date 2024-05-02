@@ -65,10 +65,16 @@
 			Not available right now
 		</div>	
 
-		<div class="annual-fee details">
-			<h4>Pay annual fee</h4>
+	
+		<div class="manage-employee details">
+            <h4 class="title">Annual Payment Details</h4>
 			<hr>
-			Already paid!
+            <div class="employee-buttons">
+			<a href="annualFee/add-af.php" target="_blank" class="button-one">Add Payment details</a>
+            <a href="annualFee/read-af.php" target="_blank" class="button-one">Read Previous payments</a>
+            <a href="annualFee/add-af.php" target="_blank" class="button-one">Update employee details</a>
+            <a href="annualFee/add-af.php" target="_blank" class="button-one">Delete employee</a>
+        	</div>
 		</div>
 
 		<div class="complaint details">

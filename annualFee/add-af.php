@@ -3,7 +3,8 @@ session_start();
 
 require_once '../inc/connection.php';
 
-//checking if a user is logged in
+//checking if a user is logged in 
+
 if(!isset($_SESSION['user_id'])){
     header("Location: sign-in.php");
 } 
@@ -36,7 +37,7 @@ $connection->close();
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>User</title>
-	<link rel="stylesheet" type="text/css" href="add-emp.css">
+	<link rel="stylesheet" type="text/css" href="style-af.css">
 </head>
 
 <body>
@@ -55,38 +56,27 @@ $connection->close();
             <div class="form-container">
                 <form action="add-af.php" method="post" id="emp-form">
                     <h3><u>Add details of annual fee payment</u></h3>
+                    <p><small>[Add payment details according to your payment slip]</small></p>
                 <div class="emp-details">
-                    <label for="">Employee ID</label>
-                    <input type="text" name="empId">
+                    <label for="">Payment ID</label>
+                    <input type="text" name="feeId" >
                 </div>
 
                 <div class="emp-details">
-                    <label for="">Employee Name</label>
-                    <input type="text" name="empName">
+                    <label for="">Amount</label>
+                    <input type="text" name="amount">
                 </div>
 
                 <div class="emp-details">
-                    <label for="">Date of birth</label>
-                    <input type="date" name="dob">
-                </div>
-                
-                <div class="emp-details">
-                    <label for="">Contact</label>
-                    <input type="text" name="contact">
+                    <label for="">Payment Date</label>
+                    <input type="date" name="paymentDate">
                 </div>
 
-                <div class="emp-details">
-                <label for="job-title">Job title : </label>
-                <select name="job-title" id="job-title" id="">
-                    <option value="Insurance Coordinator">Insurance Coordinator</option>
-                    <option value="Human Resources Manager">Human Resources Manager</option>
-                    <option value="Claim Processor">Claim Processor</option>
-                    <option value="Finance Manager">Finance Manager</option>
-                    <option value="Healthcare Navigator">Healthcare Navigator</option>
-                    <option value="Data Analyst">Data Analyst</option>
-                    <option value="IT Specialist">IT specialist</option>
-                </select>
-                </div>
+                <div class="emp_details">
+                    <p>This data is submitted according to;</p> 
+                    User ID : <b><?php echo $_SESSION['user_id']."  "; ?></b> <br>
+                    User Name : <b><?php echo "  ".$_SESSION['first_name']; ?></b>
+                </div> <br>
 
                 <button type="submit" name="submit">Submit</button>
                 <br>
