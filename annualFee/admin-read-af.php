@@ -18,7 +18,7 @@ session_start();
         </div>
 
         <ul class="nav1">
-            <li class="nav1"><a href="../user.php">User dashboard</a></li>
+            <li class="nav1"><a href="../admin.php">admin dashboard</a></li>
             <li class="nav2"><a href="../logout.php">Log Out</a></li>
         </ul>
 
