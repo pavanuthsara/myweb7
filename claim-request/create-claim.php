@@ -11,8 +11,6 @@ if(!isset($_SESSION['user_id'])){
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    //$targetDir = "uploads/";
-
     $file = $_FILES['file'];
     $fileName = $_FILES['file']['name'];
     $fileType = $_FILES['file']['type'];
@@ -57,7 +55,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         exit("wrong file type");
         // wrong file type
     }
-    //$fileName = 
+
 }
 
 $connection->close();
@@ -87,7 +85,7 @@ $connection->close();
             
             
             <div class="form-container">
-                <form action="create-claim.php" method="post" id="emp-form">
+                <form action="create-claim.php" method="post" id="emp-form" enctype="multipart/form-data">
                     <h3><u>Request a claim - form</u></h3>
                     <!--<p><small>[Add payment details according to your payment slip]</small></p>-->
                 <div class="emp-details">
