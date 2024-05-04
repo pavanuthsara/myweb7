@@ -108,3 +108,15 @@ CREATE TABLE planUpdate (
     CONSTRAINT planUpdate_fk1 FOREIGN KEY (planId) REFERENCES plan(planId), 
     CONSTRAINT planUpdate_fk2 FOREIGN KEY (adminId) REFERENCES admin(adminId) 
 ); 
+
+create table claimRequest (
+	claimId int AUTO_INCREMENT not null,
+    userId varchar(6) not null,
+    fileName varchar(255) not null,
+    note varchar(200) not null,
+    date varchar(20) not null,
+    status varchar(20)  not null,
+    
+    CONSTRAINT claimRequest_pk PRIMARY KEY (claimId),
+    CONSTRAINT claimRequest_fk FOREIGN KEY (userId) REFERENCES user(userId)
+);

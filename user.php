@@ -77,6 +77,17 @@
         	</div>
 		</div>
 
+		<div class="manage-employee details">
+            <h4 class="title">Claim Requests</h4>
+			<hr>
+            <div class="employee-buttons">
+			<a href="claim-request/create-claim.php" target="_blank" class="button-one">Create claim details</a>
+            <a href="claim-request/read-claim.php" target="_blank" class="button-one">Read & Update Previous claim requests</a>
+            <!--<a href="annualFee/update-af.php" target="_blank" class="button-one">Update payment details</a>-->
+            <a href="claim-request/delete-claim.php" target="_blank" class="button-one">Delete claim request</a>
+        	</div>
+		</div>
+
 		<div class="complaint details">
 			<h4>Add a complaint</h4>
 			<hr>
