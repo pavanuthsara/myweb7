@@ -98,3 +98,13 @@ CREATE Table annualFee(
     CONSTRAINT annualFee_pk PRIMARY KEY(feeId),
     CONSTRAINT annualFee_fk FOREIGN KEY (userId) REFERENCES user(userId)
 );
+
+CREATE TABLE planUpdate ( 
+    planId VARCHAR(6) NOT NULL, 
+    adminId VARCHAR(6) NOT NULL, 
+    updateDate VARCHAR(20) NOT NULL, 
+    
+    CONSTRAINT planUpdate_pk PRIMARY KEY (planId, adminId), 
+    CONSTRAINT planUpdate_fk1 FOREIGN KEY (planId) REFERENCES plan(planId), 
+    CONSTRAINT planUpdate_fk2 FOREIGN KEY (adminId) REFERENCES admin(adminId) 
+); 

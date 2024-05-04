@@ -6,7 +6,7 @@ session_start();
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Admin - Read employees</title>
+	<title>Admin - Plan details</title>
 	<link rel="stylesheet" type="text/css" href="read-plan.css">
 </head>
 
