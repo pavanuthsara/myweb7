@@ -71,9 +71,9 @@
 			<hr>
             <div class="employee-buttons">
 			<a href="annualFee/add-af.php" target="_blank" class="button-one">Add Payment details</a>
-            <a href="annualFee/read-af.php" target="_blank" class="button-one">Read Previous payments</a>
-            <a href="annualFee/add-af.php" target="_blank" class="button-one">Update employee details</a>
-            <a href="annualFee/add-af.php" target="_blank" class="button-one">Delete employee</a>
+            <a href="annualFee/read-af.php" target="_blank" class="button-one">Read & Update Previous payments</a>
+            <!--<a href="annualFee/update-af.php" target="_blank" class="button-one">Update payment details</a>-->
+            <a href="annualFee/delete-af.php" target="_blank" class="button-one">Delete payment details</a>
         	</div>
 		</div>
 
