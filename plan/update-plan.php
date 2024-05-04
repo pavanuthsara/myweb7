@@ -37,9 +37,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     header("Location: add-plan.php?add-employee-message=executed!");
 
 }
-
-$connection->close();
-
 ?>
 
 <!DOCTYPE html>
@@ -109,16 +106,84 @@ $connection->close();
                     ?>
                 </p>
                 </form>
+            </div> <!-- end form-container -->
+
+            <hr>
+
+            <div class="view-employee"> 
+                <div class="plan-update-text"><b><u>Plan Update Details</u></b></div> <!-- end Plan Details -->
+                        <br>
+                        <?php 
+                        require_once '../inc/connection.php';
+                        $sql = "SELECT * FROM planUpdate";
+                        $result = $connection->query($sql);
+                        
+                        if(!$result){
+                            die("Invalid query or no results found!");
+                        }else{ 
+                            echo "<style>
+                            .view-employee{
+                                height: 40vh;
+                            }
+                            table, th,td{
+                                padding: 5px 15px;
+                                border: 1px solid black;
+                                border-collapse: collapse;
+                            }
+                            
+                            .edit-button{
+                                text-decoration: none;
+                                display: inline-block;
+                                background-color: #0ed58f;
+                                color:black;
+                                padding: 10px;
+                                cursor: pointer;
+                                border-radius: 5px;
+                            }
+                            
+                            .delete-button{
+                                text-decoration: none;
+                                display: inline-block;
+                                background-color: #ca0939;
+                                color:white;
+                                padding: 10px;
+                                cursor: pointer;
+                                border-radius: 5px;
+                            }
+                            .center-table{
+                                display: flex;
+                                box-sizing: border-box;
+                                justify-content: center;
+                                align-items: center;
+                                padding:10px;
+                            }
+                            </style>";
+                            echo '<div class="center-table">';
+                            echo "<table>";
+                            echo "<tr><td>Plan Id</td> <td>Admin Id</td> <td>Updated Date</td>";
+                            while($row=$result->fetch_assoc()){
+                                echo "<tr>";
+                                echo "<td>".$row['planId']."</td>";
+                                echo "<td>".$row['adminId']."</td>";
+                                echo "<td>".$row['updateDate']."</td>";
+                                echo "</tr>";
+                            }
+                            echo "</table>"; 
+                            echo '</div>';
+                        } 
+                        $connection->close();
+                        ?> <!-- end PHP -->
+                        
+            </div> <!-- end view employee -->
 
 
-                
-            </div>
         <footer>
             <hr>
             &copy; 2024 Copyright Reserved - Shield Plus Insurance <br>
             <small>email@shieldplus.com</small>
         </footer>
-	</div>
+
+	</div> <!-- end main-container  -->
 
 
 </body>
