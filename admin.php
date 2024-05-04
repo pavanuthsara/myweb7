@@ -79,10 +79,7 @@
         <div class="manage-complaints details">
 			<h4 class="title">Manage Annual Fee Payments</h4>
             <div class="employee-buttons">
-            <a href="annualFee/admin-read-af.php" target="_blank" class="button-one">Read Annual Fee Payments</a>
-            <a href=".php" target="_blank" class="button-one">Add new employee</a>
-            <a href=".php" target="_blank" class="button-one">Update employee details</a>
-            <a href=".php" target="_blank" class="button-one">Delete employee</a>
+            <a href="annualFee/admin-read-af.php" target="_blank" class="button-one">User Annual Fee Payments</a>
             </div>
 			<hr>
 		</div>

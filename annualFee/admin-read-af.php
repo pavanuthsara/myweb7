@@ -7,7 +7,7 @@ session_start();
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Admin - Read employees</title>
-	<link rel="stylesheet" type="text/css" href="style-af.css">
+	<link rel="stylesheet" type="text/css" href="admin-read-af.css">
 </head>
 
 <body>
@@ -18,7 +18,7 @@ session_start();
         </div>
 
         <ul class="nav1">
-            <li class="nav1"><a href="../user.php">User dashboard</a></li>
+            <li class="nav1"><a href="../admin.php">admin dashboard</a></li>
             <li class="nav2"><a href="../logout.php">Log Out</a></li>
         </ul>
 
@@ -59,6 +59,13 @@ session_start();
                         cursor: pointer;
                         border-radius: 5px;
                     }
+                    .center-table{
+                        display: flex;
+                        box-sizing: border-box;
+                        justify-content: center;
+                        align-items: center;
+                        padding:10px;
+                    }
                     </style>";
                     echo '<div class="center-table">';
                     echo "<table>";
@@ -80,19 +87,19 @@ session_start();
                 $connection->close();
                 ?>
                 <hr>
-                <div class="approve">
+                <div class="form-container">
                     <form action="admin-approve.php" method="post">
                         <label for="">Approve Payment</label>
                         <input type="text" name="feeId">
-                        <input type="submit" value="Approve Record">
+                        <input type="submit" value="Approve Record" class="green-button">
                     </form>
                 </div>
 
-                <div class="decline">
+                <div class="form-container">
                     <form action="admin-decline.php" method="post">
                         <label for="">Decline Payment</label>
                         <input type="text" name="feeId">
-                        <input type="submit" value="Decline Record">
+                        <input type="submit" value="Decline Record" class="red-button">
                     </form> 
                 </div>
             </div>

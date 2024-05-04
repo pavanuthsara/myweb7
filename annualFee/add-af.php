@@ -19,12 +19,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $status = "Pending";
 
     $add_sql = "INSERT INTO annualFee VALUES ('$feeId', '$userId', '$amount', '$paymentDate', '$status')";
+    $select_sql = "SELECT * FROM annualFee WHERE feeID='$feeId'";
+    $check_sql = mysqli_query($connection, $select_sql);
+    //$check_sql = $connection->$select_sql;
 
-    if($connection->query($add_sql)){
-        header("Location: add-af.php?add-employee-message=Payment details entered successfully!");
-    } else{
-        header("Location: add-af.php?add-employee-message=Error");
+    $errors = '';
+
+    if($check_sql>0){
+        //echo "<script src='script.js'></script>";
+        $errors = '<script type="text">alert("FeeID exists!");</script>';
+        //header("Location: add-af.php");
+    }else{
+        if($connection->query($add_sql)){
+            echo "<script src='add-af-success.js'></script>";
+            //header("Location: add-af.php");
+        } else{
+            echo "<script src='add-af-error.js'></script>";
+            header("Location: add-af.php");
+        }
     }
+
+    echo $erros;
 }
 
 $connection->close();
@@ -36,7 +51,7 @@ $connection->close();
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>User</title>
+	<title>User - Add payment</title>
 	<link rel="stylesheet" type="text/css" href="style-af.css">
 </head>
 
