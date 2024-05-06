@@ -9,7 +9,7 @@
     width: calc(40% - 40px); 
     margin-bottom: 40px; 
     margin-right: 40px;
-    background-color: #f0f0f0; 
+    background-color: #c1c1c1; 
     padding: 100px; 
     box-sizing: border-box; 
     transition: transform 0.3s;
@@ -18,7 +18,7 @@
 .plan2 {
     width: calc(40% - 40px); 
     margin-bottom: 40px; 
-    background-color: #f0f0f0; 
+    background-color: #c1c1c1; 
     padding: 100px; 
     box-sizing: border-box; 
     transition: transform 0.3s;
@@ -28,7 +28,7 @@
     width: calc(40% - 40px); 
     margin-bottom: 40px; 
     margin-right: 40px;
-    background-color: #f0f0f0; 
+    background-color: #c1c1c1; 
     padding: 100px; 
     box-sizing: border-box; 
     transition: transform 0.3s;
@@ -37,7 +37,7 @@
 .plan4 {
     width: calc(40% - 40px); 
     margin-bottom: 40px; 
-    background-color: #f0f0f0; 
+    background-color: #c1c1c1; 
     padding: 100px; 
     box-sizing: border-box; 
     transition: transform 0.3s;
@@ -46,30 +46,30 @@
 .plan5 {
     width: calc(40% - 40px); 
     margin-bottom: 40px; 
-    background-color: #f0f0f0; 
+    background-color: #c1c1c1; 
     padding: 100px; 
     box-sizing: border-box; 
     transition: transform 0.3s;
 }
 
 .plan1:hover{
-    background-color: #73aaf7;  
+    background-color: #73f7ba;  
     transform: scale(105%);
 }
 .plan2:hover{
-    background-color: #73aaf7;  
+    background-color: #73f7ba;  
     transform: scale(105%);
 }
 .plan3:hover{
-     background-color: #73aaf7;  
+     background-color: #73f7ba;  
      transform: scale(105%); 
 }
 .plan4:hover{
-     background-color: #73aaf7;  
+     background-color: #73f7ba;  
      transform: scale(105%); 
 }
 .plan5:hover{
-     background-color: #73aaf7;   
+     background-color: #73f7ba;   
      transform: scale(105%);
 }
 
@@ -87,7 +87,7 @@ body{
 
 .description{
     background: url('../images/r1.jpeg');
-    color: rgb(3, 91, 173);
+    color: rgb(0, 0, 0);
     background-repeat: no-repeat;
     background-size: cover;
     font-size: xx-large;
