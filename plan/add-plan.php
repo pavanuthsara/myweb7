@@ -18,9 +18,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $add_sql = "INSERT INTO plan VALUES ('$planId', '$planName', '$planFee', '$planDescription', '$planDuration')";
 
     if($connection->query($add_sql)){
-        header("Location: add-plan.php?add-employee-message=Plan entered successfully!");
+        header("Location: add-plan.php");
     } else{
-        header("Location: add-plan.php?add-employee-message=Error");
+        exit('error!');
     }
 }
 
@@ -84,13 +84,6 @@ $connection->close();
 
                 <button type="submit" name="submit">Submit</button>
                 <br>
-                <p>
-                    <?php
-                    if(isset($_GET['add-employee-message'])){
-                        echo $_GET['add-employee-message'];
-                    }
-                    ?>
-                </p>
                 </form>
 
             </div>

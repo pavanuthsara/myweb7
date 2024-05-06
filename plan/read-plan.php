@@ -61,6 +61,13 @@ session_start();
                         cursor: pointer;
                         border-radius: 5px;
                     }
+                    .center-table{
+                        display: flex;
+                        box-sizing: border-box;
+                        justify-content: center;
+                        align-items: center;
+                        padding:10px;
+                    }
                     </style>";
                     echo '<div class="center-table">';
                     echo "<table>";
