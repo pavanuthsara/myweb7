@@ -11,7 +11,7 @@ create table employee (
 
 /* create user table */
 CREATE TABLE user(
-    userId VARCHAR(10) NOT NULL,
+    userId INT AUTO_INCREMENT NOT NULL,
     firstName VARCHAR(20) NOT NULL,
     lastName VARCHAR(20) NOT NULL,
     gender VARCHAR(10) NOT NULL,
@@ -27,15 +27,15 @@ CREATE TABLE user(
 
 /* insert values to user table */
 INSERT INTO user 
-VALUES ('u1', 'Pavan', 'Uthsara', 'male', '0714169538', 'pavan@shieldplus.com', 'No.2, Welthera mawatha, Kothalawala', '2003-08-29', 'p1', 'uthsara');
+VALUES ('1', 'Pavan', 'Uthsara', 'male', '0714169538', 'pavan@shieldplus.com', 'No.2, Welthera mawatha, Kothalawala', '2003-08-29', 'p1', 'uthsara');
 
 /* insert values into user table */
 INSERT INTO user 
-VALUES ('u2', 'Tharindu', 'Silva', 'male', '0771234567', 'tharindu@gmail.com', 'No.15, Devananda Mawatha, Colombo 05', '1995-05-12', 'p2', 'silva'),
-        ('u3', 'Samantha', 'Perera', 'female', '0762345678', 'samantha@yahoo.com', 'No.7, Anura Mawatha, Kandy', '1988-11-23', 'p3', 'perera'),
-        ('u4', 'Dilshan', 'Fernando', 'male', '0703456789', 'dilshan@hotmail.com', 'No.25, Senarath Mawatha, Negombo', '1979-03-17', 'p4', 'fernando'),
-        ('u5', 'Nadeesha', 'Bandara', 'female', '0724567890', 'nadeesha@outlook.com', 'No.9, Karunaratne Mawatha, Galle', '1992-09-30', 'p5', 'bandara'),
-        ('u6', 'Rangana', 'Jayawardena', 'male', '0785678901', 'rangana@gmail.com', 'No.33, Rathnayake Mawatha, Matara', '1983-06-14', 'p1', 'jayawardena'); 
+VALUES ('2', 'Tharindu', 'Silva', 'male', '0771234567', 'tharindu@gmail.com', 'No.15, Devananda Mawatha, Colombo 05', '1995-05-12', 'p2', 'silva'),
+        ('3', 'Samantha', 'Perera', 'female', '0762345678', 'samantha@yahoo.com', 'No.7, Anura Mawatha, Kandy', '1988-11-23', 'p3', 'perera'),
+        ('4', 'Dilshan', 'Fernando', 'male', '0703456789', 'dilshan@hotmail.com', 'No.25, Senarath Mawatha, Negombo', '1979-03-17', 'p4', 'fernando'),
+        ('5', 'Nadeesha', 'Bandara', 'female', '0724567890', 'nadeesha@outlook.com', 'No.9, Karunaratne Mawatha, Galle', '1992-09-30', 'p5', 'bandara'),
+        ('6', 'Rangana', 'Jayawardena', 'male', '0785678901', 'rangana@gmail.com', 'No.33, Rathnayake Mawatha, Matara', '1983-06-14', 'p1', 'jayawardena'); 
 
 /* create admin table */
 CREATE TABLE admin(
@@ -90,7 +90,7 @@ INSERT INTO employee VALUE ('e6', 'Perani Devadunug', '1982-09-15', '0723456789'
 /* Annual Fee Table */
 CREATE Table annualFee(
     feeId VARCHAR(6) NOT NULL,
-    userId VARCHAR(6) NOT NULL,
+    userId int NOT NULL,
     amount FLOAT NOT NULL,
     paymentDate DATE NOT NULL,
     status VARCHAR(20),
@@ -111,7 +111,7 @@ CREATE TABLE planUpdate (
 
 create table claimRequest (
 	claimId int AUTO_INCREMENT not null,
-    userId varchar(6) not null,
+    userId int not null,
     fileName varchar(255) not null,
     note varchar(200) not null,
     date varchar(20) not null,
@@ -123,7 +123,7 @@ create table claimRequest (
 
 CREATE TABLE complaint (
 	complaintId int AUTO_INCREMENT not null,
-    userId VARCHAR(6) NOT NULL,
+    userId int NOT NULL,
     date VARCHAR(15) NOT NULL, 
     complaintType VARCHAR(25) NOT NULL, 
     description VARCHAR(255) NOT NULL,

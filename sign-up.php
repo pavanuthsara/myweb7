@@ -9,8 +9,16 @@
 		$email = $_POST['email'];
 		$address = $_POST['address'];
 		$dob = $_POST['dob'];
-		$plan = $_POST['plans'];
+		$plan = $_POST['plan'];
 		$password = $_POST['password'];
+
+		$sql = "INSERT INTO user VALUES (NULL, '$firstName', '$lastName', '$gender', '$mobileNumber', '$email', '$address', '$dob', '$plan', '$password')";
+
+		if($connection->query($sql)){
+			echo "user registered succesfully!";
+		} else {
+			exit ("user registration unsucessfull!");
+		}
 	}
 ?>
 
@@ -46,7 +54,7 @@
 		        <div class="ele">
 		        <label>Mobile Number</label> <br>
 		        <small>Format : 07xxxxxxxx</small> <br>
-		        <input type="tel" name="mobileNumber" maxlength="10" required pattern="[0-9]{10}" class="a"> <br>
+		        <input type="tel" name="mobileNumber" maxlength="10" required  class="a"> <br>
 		        </div>
 
 		        <div class="ele">
@@ -82,24 +90,22 @@
 		        <div class="ele">
 		        <label>Password</label> <br>
 		        <input type="password" name="password" required class="b" id="pwd1"> <br>
-				<!--pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"-->
 		        </div>
-        
+
+				<!--
 		        <div class="ele">
 		        <label>Re-enter password</label> <br>
 		        <input type="password" name="rePassword" class="b" id="pwd2"> <br>
-		        </div>
+		        </div> 
 
 		        <div class="ele">
 		        	<p id="message"></p>
 		        </div>
 
-		        <div class="ele">
-		        <input type="checkbox" name="">
-		        <label>Accept Terms and Conditions</label> <br>
-		        </div>
+				-->
 
-		        <input type="button" name="" value="Submit" onclick="signUpFormValidation()">
+				<!--<button class="button-green center" type="submit" name="submit">Sign In</button> <br> -->
+		        <input type="submit" name="submit" value="Submit">
 
 	        </form>
 
