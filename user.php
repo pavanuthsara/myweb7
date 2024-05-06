@@ -42,7 +42,7 @@
 
 			<div class="profile-pic">
 				<p>add profile pic here</p>
-			</div>
+			</div> 
 
 			<div class="user-details-content">
 				<p>User ID : <?php echo $_SESSION['user_id'];?></p>
@@ -53,6 +53,7 @@
 			
 		</div>
 		
+		<!--
 		<div class="claim-request details">
 			<h4>Request a claim</h4>
 			<hr>
@@ -63,7 +64,7 @@
 			<h4>Pending claim requests</h4>
 			<hr>
 			Not available right now
-		</div>	
+		</div>	-->
 
 	
 		<div class="manage-employee details">
@@ -81,17 +82,22 @@
             <h4 class="title">Claim Requests</h4>
 			<hr>
             <div class="employee-buttons">
-			<a href="claim-request/create-claim.php" target="_blank" class="button-one">Create claim details</a>
+			<a href="claim-request/create-claim.php" target="_blank" class="button-one">Add claim request</a>
             <a href="claim-request/read-claim.php" target="_blank" class="button-one">Read & Update Previous claim requests</a>
             <!--<a href="annualFee/update-af.php" target="_blank" class="button-one">Update payment details</a>-->
             <a href="claim-request/delete-claim.php" target="_blank" class="button-one">Delete claim request</a>
         	</div>
 		</div>
 
-		<div class="complaint details">
-			<h4>Add a complaint</h4>
+		<div class="manage-employee details">
+            <h4 class="title">Add a complaint</h4>
 			<hr>
-			Not available right now
+            <div class="employee-buttons">
+			<a href="complaint-crud/complaint-add.php" target="_blank" class="button-one">Add a complaint</a>
+            <a href="complaint-crud/complaint-read.php" target="_blank" class="button-one">Read & Update Previous previous complaint</a>
+            <!--<a href="annualFee/update-af.php" target="_blank" class="button-one">Update payment details</a>-->
+            <a href="complaint-crud/complaint-delete.php" target="_blank" class="button-one">Delete complaint</a>
+        	</div>
 		</div>
 		
 		<!--

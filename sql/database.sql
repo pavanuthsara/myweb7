@@ -120,3 +120,15 @@ create table claimRequest (
     CONSTRAINT claimRequest_pk PRIMARY KEY (claimId),
     CONSTRAINT claimRequest_fk FOREIGN KEY (userId) REFERENCES user(userId)
 );
+
+CREATE TABLE complaint (
+	complaintId int AUTO_INCREMENT not null,
+    userId VARCHAR(6) NOT NULL,
+    date VARCHAR(15) NOT NULL, 
+    complaintType VARCHAR(25) NOT NULL, 
+    description VARCHAR(255) NOT NULL,
+    status VARCHAR(25) NOT NULL,
+    
+    CONSTRAINT complaint_pk PRIMARY KEY (complaintId),
+    CONSTRAINT complaint_fk FOREIGN KEY (userId) REFERENCES user(userId)
+);
