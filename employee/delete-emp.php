@@ -17,20 +17,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $contact = $_POST['contact'];
     $jobTitle = $_POST['job-title'];
 
-    //$add_sql = "INSERT INTO employee VALUES ('$employeeId', '$employeeName', '$dob', '$contact', '$jobTitle')";
-    //DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
     $delete_sql = "DELETE FROM employee WHERE employeeId='$employeeId'";
 
-    if(empty($delete_sql)){
-        if($connection->query($delete_sql)){
-            header("Location: delete-emp.php?add-employee-message=Employee deleted successfully!");
-        } else{
-            header("Location: delete-emp.php?add-employee-message=Error in query execution!");
-        }   
-    } else {
-        header("Location: delete-emp.php?add-employee-message=Error employee ID, Enter a valid employee ID!");
-    }
-}
+    
+    if($connection->query($delete_sql)){
+        header("Location: delete-emp.php?add-employee-message=Employee deleted successfully!");
+    } else{
+        header("Location: delete-emp.php?add-employee-message=Error in query execution!");
+    }   
+} 
 
 $connection->close();
 

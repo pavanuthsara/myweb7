@@ -22,7 +22,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
    
 
     if($connection->query($update_sql)){
-        header("Location: update-emp.php?add-employee-message=Employee entered successfully!");
+        header("Location: update-emp.php?add-employee-message=Employee updated successfully!");
     } else{
         header("Location: update-emp.php?add-employee-message=Error");
     }

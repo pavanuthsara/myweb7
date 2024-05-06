@@ -20,16 +20,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $update_sql = "UPDATE plan SET planName='$planName', planFee='$planFee', planDescription='$planDescription', duration='$planDuration' WHERE planId='$planId'";
     $add_sql = "INSERT INTO planUpdate VALUES ('$planId', '$adminId', '$date')";
-                    
-
-/*
-    if($connection->query($add_sql)){
-        if($connection->query($update_sql)){
-            header("Location: add-plan.php?add-employee-message=Plan updated successfully!");
-        } else{
-        header("Location: add-plan.php?add-employee-message=Error");
-        }
-    } */
 
     $connection->query($update_sql);
     $connection->query($add_sql);

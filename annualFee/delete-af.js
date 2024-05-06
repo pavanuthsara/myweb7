@@ -1,0 +1,1 @@
+alert('Annual payment deleted successfully!');

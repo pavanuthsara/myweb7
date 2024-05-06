@@ -47,7 +47,8 @@
 			</div>
 			
 		</div>
-		
+
+		<!-- Employee crud -->
 		<div class="manage-employee details">
             <h4 class="title">Manage employees</h4>
 			<hr>
@@ -68,12 +69,6 @@
             <a href="plan/update-plan.php" target="_blank" class="button-one">Update plan detail</a>
             <a href="plan/delete-plan.php" target="_blank" class="button-one">Delete plan</a>
             </div>
-		</div>
-
-		<div class="manage-claim-request details">
-			<h4 class="title">Manage claim requests</h4>
-			<hr>
-			Not available right now
 		</div>	
 
         <div class="manage-complaints details">
@@ -84,10 +79,6 @@
 			<hr>
 		</div>
 
-		<div class="manage-complaints details">
-			<h4 class="title">Manage complaints</h4>
-			<hr>
-		</div>
 
         <?php require_once('inc/footer.php') ?>
 	</div>

@@ -81,7 +81,6 @@ $userId = $_SESSION['user_id'];
                     echo "</table>"; 
                     echo '</div>';
                 } 
-                //$connection->close();
                 ?>
                 <hr>
             </div>
@@ -110,11 +109,9 @@ $userId = $_SESSION['user_id'];
    
 
                     if($connection->query($update_sql)){
-                        //header("Location: read-af.php?add-employee-message=Employee entered successfully!");
                         echo "<script src='read-af-update.js'></script>";
-                        header("Location: read-af.php");
                     } else{
-                        header("Location: read-af.php?add-employee-message=Error");
+                        echo "error!";
                     }
                 }
 
@@ -148,14 +145,7 @@ $userId = $_SESSION['user_id'];
                 </div> <br>
 
                 <button type="submit" name="submit">Update</button>
-                <br>
-                <p>
-                    <?php
-                    if(isset($_GET['add-employee-message'])){
-                        echo $_GET['add-employee-message'];
-                    }
-                    ?>
-                </p>
+                
                 </form>
 
             </div>

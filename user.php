@@ -39,32 +39,18 @@
 		<h4>Hello name, Welcome to shield plus!</h4>
 
 		<div class="user-details details">
-
+			<!--
 			<div class="profile-pic">
 				<p>add profile pic here</p>
-			</div> 
+			</div> -->
 
 			<div class="user-details-content">
 				<p>User ID : <?php echo $_SESSION['user_id'];?></p>
 				<p>Username : <?php echo $_SESSION['first_name'];?></p> 
 				<p>Plan : <?php echo $_SESSION['plan_name']; ?></p>
-				<button class="button-green">Edit your details</button>
 			</div>
 			
 		</div>
-		
-		<!--
-		<div class="claim-request details">
-			<h4>Request a claim</h4>
-			<hr>
-			<button class="button-green">Request</button>
-		</div>	
-
-		<div class="claim-request details">
-			<h4>Pending claim requests</h4>
-			<hr>
-			Not available right now
-		</div>	-->
 
 	
 		<div class="manage-employee details">
@@ -84,7 +70,6 @@
             <div class="employee-buttons">
 			<a href="claim-request/create-claim.php" target="_blank" class="button-one">Add claim request</a>
             <a href="claim-request/read-claim.php" target="_blank" class="button-one">Read & Update Previous claim requests</a>
-            <!--<a href="annualFee/update-af.php" target="_blank" class="button-one">Update payment details</a>-->
             <a href="claim-request/delete-claim.php" target="_blank" class="button-one">Delete claim request</a>
         	</div>
 		</div>
@@ -95,18 +80,10 @@
             <div class="employee-buttons">
 			<a href="complaint-crud/complaint-add.php" target="_blank" class="button-one">Add a complaint</a>
             <a href="complaint-crud/complaint-read.php" target="_blank" class="button-one">Read & Update Previous previous complaint</a>
-            <!--<a href="annualFee/update-af.php" target="_blank" class="button-one">Update payment details</a>-->
             <a href="complaint-crud/complaint-delete.php" target="_blank" class="button-one">Delete complaint</a>
         	</div>
 		</div>
 		
-		<!--
-        <footer>
-	        <hr>
-	        &copy; 2024 Copyright Reserved - Shield Plus Insurance <br>
-	        <small>email@shieldplus.com</small>
-        </footer> 
-    	-->
 
         <?php require_once('inc/footer.php') ?>
 	</div>

@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
     if($connection->query($delete_sql)){
-        header("Location: delete-af.php?add-employee-message=Payment record deleted successfully!");
+        echo "<script src='delete-af.js'></script>";
     } else{
         header("Location: delete-af.php?add-employee-message=Error in query execution!");
     }   

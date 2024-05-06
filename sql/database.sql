@@ -132,3 +132,6 @@ CREATE TABLE complaint (
     CONSTRAINT complaint_pk PRIMARY KEY (complaintId),
     CONSTRAINT complaint_fk FOREIGN KEY (userId) REFERENCES user(userId)
 );
+
+
+INSERT INTO annualfee VALUES ('1', 1, 15000, '2023-05-15', 'pending'); 
