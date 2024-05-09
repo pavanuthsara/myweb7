@@ -29,6 +29,43 @@ New user can register in the system. Register user can log into the system.
     * Run the URL on browser <b>localhost/myweb7/home.php</b> 
     (Replace <b>myweb7</b> with local folder name)
 
+## Known issues 
+
+1. User registration page.
+    * Not implemented re-enter password
+    * User are not asked to accecpt terms & conditions
+    * If user email alredy exists, there is no validation method [two users can have same email / primary key of the user table is userId given by system]
+    * Validate user entered phone number 
+
+2. User log in form
+    * If entered invalid userId then system will not display "user doesnot exist"  
+    * If user fogot password, user cannot reset their password
+
+## Screenshots of webpages
+
+<img src='readme-pics/sign-in.png'>
+
+_User log in page_
+
+<img src='readme-pics/user-dashboard.png'>
+
+_User dashboard_
+
+<img src='readme-pics/admin-dashboard.png'>
+
+_Admin dashboard_
+
+<img src='readme-pics/admin-mange-payments.png'>
+
+_Admin payment manage page_
+
+<img src='readme-pics/user-fee-payments.png'>
+
+_User fee payment page_
+
+
+
+
 
 
 
